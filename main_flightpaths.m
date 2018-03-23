@@ -5,12 +5,11 @@
 
 clear, clc;
 
+%constant values used throughout
 v0 = 600;
 theta = 60;
 k = [0 0.005 0.01 0.02 0.04 0.08];
 
+%call flightpath.m, feed data to plot_flightpaths.m
 fs = flightpath(v0,theta,k);
-fs(1)
-fs(2)
-
 plot_flightpaths(fs);

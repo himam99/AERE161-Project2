@@ -10,6 +10,6 @@ v0 = 600;
 theta = 60;
 k = [0:0.001:0.08];
 
-%call flightpath.m, use value to plot range.
+%call flightpath.m, use v
 fs = flightpath(v0,theta,k);
 plot_range(fs);

@@ -5,18 +5,45 @@
 
 function plot_flightpaths(fs)
 
-pstring = ''
+p = '';
+l = '';
+
+%Altitude, y / Distance, x
 figure
 for i = 1:size(fs,2);
-    pstring = strcat(pstring,sprintf('fs(%d).x, fs(%d).y),',i,i));
+    p = strcat(p,sprintf('fs(%d).x, fs(%d).y,',i,i));
+    l = strcat(l, sprintf('num2str(fs(%d).k),',i));
 end
-pstring = pstring(1:end-1)
-eval(
-xlabel('x');
-ylabel('y');
-legend('k1', 'k2');
+pl = strcat('plot(',p(1:end-1),');');
+leg = strcat('lgd = legend(',l(1:end-1),');');
+eval(pl);
+xlabel('Distance, x, [m]');
+ylabel('Altitude, y, [m] ');
+eval(leg);
+title(lgd, 'k, [1/s]');
 
+%Altitude, y / Time, t
 figure
-plot(fs.t, fs.y);
-xlabel('t');
-ylabel('y');
+p = '';
+for i = 1:size(fs,2);
+    p = strcat(p,sprintf('fs(%d).t, fs(%d).y,',i,i));
+end
+pl = strcat('plot(',p(1:end-1),');')
+eval(pl);
+xlabel('Time, t, [s]');
+ylabel('Altitude, y, [m] ');
+eval(leg);
+title(lgd, 'k, [1/s]');
+
+%Horizontal Velocity, u / Time, t
+figure
+p = '';
+for i = 1:size(fs,2);
+    p = strcat(p,sprintf('fs(%d).t, fs(%d).y,',i,i));
+end
+pl = strcat('plot(',p(1:end-1),');')
+eval(pl);
+xlabel('Time, t, [s]');
+ylabel('Horizontal Velocity, u, [m] ');
+eval(leg);
+title(lgd, 'k, [1/s]');

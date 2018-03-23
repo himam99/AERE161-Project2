@@ -1,11 +1,11 @@
 %Hammad Imam // himam@iastate.edu
 %AERE 161 Project 2
-%A script which initializes parameters and calls flightpath.m and
-%plot_flightpaths.m
+%Script
+%Initializes parameters and calls flightpath.m and plot_flightpaths.m
 
 clear, clc;
 
-%constant values used throughout
+%Initializing parameters
 v0 = 600;
 theta = 60;
 k = [0 0.005 0.01 0.02 0.04 0.08];

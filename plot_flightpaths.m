@@ -1,27 +1,34 @@
 %Hammad Imam // himam@iastate.edu
 %AERE 161 Project 2
 %Function
-%Plots several flightpaths
+%Plots y(x), y(t), u(t), and v(t)
 
 function plot_flightpaths(fs)
 
-p = '';
+%create empty strings that will be filled with code to be run
+p = ''; 
 l = '';
 
 %Altitude, y / Distance, x
 figure
-for i = 1:size(fs,2)
-    p = strcat(p,sprintf('fs(%d).x, fs(%d).y,',i,i));
+for i = 1:size(fs,2) %for every part of the struct
+    p = strcat(p,sprintf('fs(%d).x, fs(%d).y,',i,i)); 
+    %extract the x and y vectors and append them to p
     l = strcat(l, sprintf('num2str(fs(%d).k),',i));
+    %extract the k value to fill in the legend
 end
-pl = strcat('plot(',p(1:end-1),');');
-leg = strcat('lgd = legend(',l(1:end-1),');');
-eval(pl);
-xlabel('Distance, x, [m]');
-ylabel('Altitude, y, [m] ');
-title('Altitide vs Distance');
-eval(leg);
-title(lgd, 'k, [1/s]');
+pl = strcat('plot(',p(1:end-1),');'); 
+%use p to generate the items in the plot, strcat to pl to make it run
+leg = strcat('lgd = legend(',l(1:end-1),');'); 
+%use l to generate a legend
+eval(pl); %generate the plot with all the different x/y pairs
+xlabel('Distance, x, [m]');  %label the x
+ylabel('Altitude, y, [m] '); %label the y
+title('Altitide vs Distance'); %give it a title
+eval(leg); %generate the legend
+title(lgd, 'k, [1/s]'); %title the legend
+
+%everything after this is similar to the first example
 
 %Altitude, y / Time, t
 figure

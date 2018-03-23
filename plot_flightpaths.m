@@ -23,7 +23,7 @@ leg = strcat('lgd = legend(',l(1:end-1),');');
 eval(pl); %generate the plot with all the different x/y pairs
 xlabel('Distance, x, [m]');  %label the x
 ylabel('Altitude, y, [m] '); %label the y
-title('Altitide vs Distance'); %give it a title
+title('Altitude vs Distance'); %give it a title
 eval(leg); %generate the legend
 title(lgd, 'k, [1/s]'); %title the legend
 
@@ -39,7 +39,7 @@ pl = strcat('plot(',p(1:end-1),');');
 eval(pl);
 xlabel('Time, t, [s]');
 ylabel('Altitude, y, [m] ');
-title('Altitide vs Time');
+title('Altitude vs Time');
 eval(leg);
 title(lgd, 'k, [1/s]');
 

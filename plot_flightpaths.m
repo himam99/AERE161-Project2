@@ -4,7 +4,6 @@
 %Plots y(x), y(t), u(t), and v(t)
 
 function plot_flightpaths(fs)
-
 %create empty strings that will be filled with code to be run
 p = ''; 
 l = '';

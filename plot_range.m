@@ -20,12 +20,12 @@ end
 figure
 plot(k, x);
 xlabel('Coefficient of Resistance, k, [1/s]');
-ylabel('Range, x_max, [m]');
+ylabel('Range, x_m_a_x, [m]');
 title('Range vs Coefficient of Resistance');
 
 %Total Time t, Resistance k
 figure
 plot(k, t);
 xlabel('Coefficient of Resistance, k, [1/s]');
-ylabel('Total Time, t_max, [s]');
+ylabel('Total Time, t_m_a_x, [s]');
 title('Total Time vs Coefficient of Resistance');

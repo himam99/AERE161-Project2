@@ -8,10 +8,10 @@ function plot_flightpaths(fs)
 pstring = ''
 figure
 for i = 1:size(fs,2);
-    pstring = strcat(pstring,sprintf('fs(%d).x, fs(%d).y,',i,i));
+    pstring = strcat(pstring,sprintf('fs(%d).x, fs(%d).y),',i,i));
 end
-runthis = strcat('plot(',pstring(1:end-1),');')
-eval(runthis);
+pstring = pstring(1:end-1)
+eval(
 xlabel('x');
 ylabel('y');
 legend('k1', 'k2');
